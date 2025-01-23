@@ -9,7 +9,16 @@ function boucleRecursive(i, arr){
 }
 boucleRecursive(0, couleurs)*/
 
-const traverseTree = (person) => {
+/*function boucleR(i){
+  console.log(i)
+  if (i === 27){
+    return
+  }
+  boucleR(i+9)
+}
+boucleR(0)*/
+
+/*const traverseTree = (person) => {
   if (person.children === undefined) {
     return;
   }
@@ -18,7 +27,62 @@ const traverseTree = (person) => {
     traverseTree(child);//Recommencer la fonction seulement pour les children
   }
 };
-traverseTree(familyTree);
+traverseTree(familyTree);*/
+
+/*function afficherDossier(){
+  console.log(`${dossierPrincipal.nom}`)
+}
+afficherDossier()*/
 
 
+
+const dossierPrincipal = {
+  nom: 'Ada',
+  contenu: [{
+      nom: 'Projets collectifs Ada',
+      contenu: [{
+          nom: 'Pico8',
+          contenu: [{
+            nom: 'mariokart.p8'
+          }]
+        },
+        {
+          nom: 'Dataviz',
+          contenu: [{
+              nom: 'index.html'
+            },
+            {
+              nom: 'script.js'
+            }
+          ]
+        }
+      ]
+    },
+    {nom: 'CV.pdf'},
+    {
+      nom: 'Projets persos',
+      contenu: [{
+        nom: 'Portfolio',
+        contenu: [{
+            nom: 'index.html'
+          },
+          {
+            nom: 'script.js'
+          }
+        ]
+      }]
+    },
+  ],
+}
+
+
+function afficherDossierRecurvif(fichier){
+  if( fichier.contenu === undefined){
+    return
+  }
+  console.log(`${fichier.nom} ${fichier.contenu.length}`)
+  for(const contenu of fichier.contenu)
+  afficherDossierRecurvif(contenu)
+}
+afficherDossierRecurvif(dossierPrincipal)
 
