@@ -76,7 +76,7 @@ const dossierPrincipal = {
 }
 
 
-function afficherDossierRecurvif(fichier){
+/*function afficherDossierRecurvif(fichier){
   if( fichier.contenu === undefined){
     return
   }
@@ -84,5 +84,16 @@ function afficherDossierRecurvif(fichier){
   for(const contenu of fichier.contenu)
   afficherDossierRecurvif(contenu)
 }
-afficherDossierRecurvif(dossierPrincipal)
+afficherDossierRecurvif(dossierPrincipal)*/
 
+function afficherDossierRecurvif(dossier){
+  for(const element of dossier.contenu){
+  if(!element.contenu){
+    return
+  }
+  for(const e of element.contenu){
+  console.log(e.nom)}
+  afficherDossierRecurvif(element)
+}
+}
+afficherDossierRecurvif(dossierPrincipal)
